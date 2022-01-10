@@ -1,0 +1,25 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { EditCarDetailsComponent } from './edit-car-details.component';
+
+describe('EditCarDetailsComponent', () => {
+  let component: EditCarDetailsComponent;
+  let fixture: ComponentFixture<EditCarDetailsComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ EditCarDetailsComponent ]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(EditCarDetailsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

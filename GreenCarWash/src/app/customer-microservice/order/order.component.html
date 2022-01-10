@@ -1,0 +1,68 @@
+<form [formGroup]="orderForm" >
+
+  <h1>New Order</h1>
+  
+  <div class="row">
+    
+    <label for="name"><span> Enter Name of Customer </span>
+      <input type="text" formControlName="name"  [(ngModel)]="order.customerName">
+    </label>
+  </div>
+  <div class="row">
+    <label for="place"><span> Enter Email </span>
+      <input type="email" formControlName="email" [(ngModel)]="order.customerEmail">
+    </label>
+  </div>
+  <div class="row">
+    <label for="place"><span> Enter Place of wash </span>
+      <input type="text" formControlName="place" [(ngModel)]="order.customerPlace">
+    </label>
+  </div>
+  <div class="row">
+    <label for="address"><span> Enter Address </span>
+      <input type="text" formControlName="address" [(ngModel)]="order.customerAddress">
+      </label>
+  </div>
+  <div class="row">
+    <label for="time"><span> Enter Date </span>
+      <input type="date" formControlName="date" [(ngModel)]="order.date">
+  </label>
+  </div>
+  <div class="row">
+    <label for="time"><span> Enter Time </span>
+      <input type="time" formControlName="time" [(ngModel)]="order.time">
+  </label>
+  </div>
+  <div class="row">
+    <label for="car type">
+        <span>Enter Car Type</span>
+        <select name="cartype" id="cartype" [(ngModel)]="carDetailsPrice" [ngModelOptions]="{standalone: true}"
+        (change)="sum()">
+          <option *ngFor="let car of details" value="{{car.price}}">{{car.type}}</option>
+        </select>
+      </label>
+    </div>
+  <div class="row">
+  <label for="addons">
+      <span>Enter Addons if any </span>
+      <select name="addon" id="addon" [(ngModel)]="addOnPrice" [ngModelOptions]="{standalone: true}"
+      (change)="sum()">
+        <option *ngFor="let addon of addons" value="{{addon.cost}}">{{addon.addon}}</option>
+      </select>
+    </label>
+  </div>
+  <div class="row">
+      <label for="promo">
+          <span>Enter promocode if any </span>
+          <select name="promo" id="promo" [(ngModel)]="promoPrice" [ngModelOptions]="{standalone: true}"
+          (change)="sum()">
+            <option *ngFor="let promo of promos" value="{{promo.price}}">{{promo.code}}
+            <span> discount :RS{{promo.price}}</span>
+          </option>
+          </select>
+        </label>
+  </div>
+  <p>Cost {{price}}</p>
+  <button class="mat-button mat-success" (click)="confirm()" [disabled]="orderForm.invalid">Place Order</button>
+  <p>{{message}}</p>
+</form>

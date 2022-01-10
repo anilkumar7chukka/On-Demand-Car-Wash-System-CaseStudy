@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center">Edit Car Details</h1>
+    </div>
+    
+    <form [formGroup]="editCarDetails">
+        <div class="form-group">
+            <label for="type">CarDetails Name</label>
+            <input type="text" class="form-control" [(ngModel)]= "carDetailsObj.type" placeholder = {{carDetailsObj.type}} id="code" formControlName="type">
+        </div>
+    
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" [(ngModel)]= "carDetailsObj.price" placeholder = {{carDetailsObj.price}} id="price" formControlName="price">
+        </div>
+    
+        <div class="form-group">
+            <label for="activate" class="mr-4"> Activate?</label>
+              <button (click)="carDetailsObj.active=true" class="btn btn-danger mr-1"> Yes </button>
+              <button (click)="carDetailsObj.active=false" class="btn btn-success mr-1"> NO </button>
+        </div>
+      
+    
+        <button class="btn btn-success" (click)="update()">Update</button>
+    
+    </form>
+    </div>

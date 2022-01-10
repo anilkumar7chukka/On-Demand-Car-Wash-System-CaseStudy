@@ -1,0 +1,25 @@
+{{message}}
+<form [formGroup]="RegistrationForm" >
+  <h1 style="margin-top: 20px;">Register</h1>
+  <div class="row">
+  
+    <label for="email"><span> Enter Email </span> <input type="email" formControlName="washerEmail"
+      [(ngModel)]="carwasherDetails.washerEmail">
+      </label>
+  </div>
+
+  <div class="row">
+    <label for="name"><span> Enter Name </span>
+      <input type="text" formControlName="name" [(ngModel)]="carwasherDetails.username"
+      formControlName="username">
+      </label>
+  </div>
+
+  <div class="row">
+    <label for="password"><span> Enter Password </span>
+      <input type="password" formControlName="password" [(ngModel)]="carwasherDetails.password"
+      formControlName="password">
+      </label>
+  </div>
+
+  <button type="submit" (click)="registerNow()" [disabled]="RegistrationForm.invalid" class="btn "> <a routerLink="/carwasher">Register</a> </button>

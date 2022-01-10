@@ -1,0 +1,27 @@
+<div class="container">
+<div class="jumbotron">
+    <h1 class="text-center">Edit Add Ons</h1>
+</div>
+
+<form [formGroup]="editAddons">
+    <div class="form-group">
+        <label for="addon">AddOn Name</label>
+        <input type="text" class="form-control" [(ngModel)]="addOnObj.addon" placeholder = {{addOnObj.addon}} id="code" formControlName="addon">
+    </div>
+
+    <div class="form-group">
+        <label for="addon">Price</label>
+        <input type="text" class="form-control" [(ngModel)]="addOnObj.cost" placeholder = {{addOnObj.cost}} id="price" formControlName="cost">
+    </div>
+
+    <div class="form-group">
+        <label for="activate" class="mr-4"> Activate?</label>
+          <button (click)="addOnObj.active=true" class="btn btn-danger mr-1"> Yes </button>
+          <button (click)="addOnObj.active=false" class="btn btn-success mr-1"> NO </button>
+    </div>
+  
+
+    <button class="btn btn-success" (click)="update()">Update</button>
+
+</form>
+</div>
